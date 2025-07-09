@@ -1,7 +1,7 @@
 docker build -t k8s-deploy-service k8s_deployer/
 kind create cluster --config=cluster-config.yml
 kind load docker-image k8s-deploy-service
-kubectl apply -f deployment.yml
+kubectl apply -f all-in-one.yml
 kubectl get pods
 kubectl port-forward [POD_NAME] 8000:8000
 curl -X POST http://localhost:8001/deploy   -H "Content-Type: application/json"   -d '{"image": "nginx"}'
