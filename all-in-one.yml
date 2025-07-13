@@ -33,21 +33,21 @@ roleRef:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: k8s-deploy
+  name: k8s-deployer
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: k8s-deploy
+      app: k8s-deployer
   template:
     metadata:
       labels:
-        app: k8s-deploy
+        app: k8s-deployer
     spec:
       serviceAccountName: deployer
       containers:
-      - name: k8s-deploy
-        image: k8s-deploy
+      - name: k8s-deployer
+        image: k8s-deployer
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8000
