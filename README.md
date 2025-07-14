@@ -1,4 +1,4 @@
-# Antworten
+# Answers
 
 Solutions for the Application-Task as a Senior DevOps Engineer.
 
